@@ -23,13 +23,12 @@ spec:
   selector:
     app: shop-web
 
-  
-  #type: NodePort
+  type: NodePort
   #type: LoadBalancer
 
-  #ports:
-  #- name: http
+  ports:
+  - name: http
     # Inside the cluster, what port does the service expose?
-    #port: 80
+    port: 80
     # Which port on the node is the service available through?
-    #nodePort: 30100
+    nodePort: 30100
