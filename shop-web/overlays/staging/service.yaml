@@ -9,7 +9,7 @@
 # @project Guya E-commerce & Guya Express
 # @description Guya Project ocurstates
 
-apiVersion: apps/v1
+apiVersion: v1
 
 kind: Service
 
