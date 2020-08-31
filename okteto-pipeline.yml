@@ -1,0 +1,5 @@
+icon: https://apps.okteto.com/movies/icon.png
+deploy:
+  - kubectl apply -k shop-web/overlays/staging
+devs:
+  - okteto.yml

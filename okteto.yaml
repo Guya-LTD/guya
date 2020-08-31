@@ -2,4 +2,4 @@ name: guya
 
 workdir: /app
 
-command: ["kubectl apply -k shop-web/overlays/staging"]
+#command: ["kubectl apply -k shop-web/overlays/staging"]
