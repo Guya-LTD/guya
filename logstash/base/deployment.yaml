@@ -1,0 +1,47 @@
+# Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+
+# @author [Simon Belete](https://github.com/Simonbelete)
+# @project Guya E-commerce & Guya Express
+# @description Guya Project ocurstates
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: logstash
+
+spec:
+  # How many old ReplicaSets for this Deployment you want to retain.
+  # The rest will be garbage-collected in the background. 
+  # By default, it is 10.
+  revisionHistoryLimit: 2
+
+  selector:
+    matchLabels:
+      app: logstash
+
+  template:
+    metadata:
+      labels:
+        app: logstash
+
+    spec:
+      containers:
+      - name: logstash
+        image: docker.elastic.co/logstash/logstash:7.6.1
+        volumeMounts:
+        - mountPath: '/usr/share/logstash/config'
+          name: pvc-logstash-volume
+        
+    volumes:
+    - name: pvc-logstash-volume
+      persistentVolumeClaim:
+        claimName: pv-logstash
+
+
