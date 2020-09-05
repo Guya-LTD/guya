@@ -30,7 +30,7 @@ spec:
     # This definition tells the machine that we are trying to create 
     # volume under this path on the underlying infrastructure.
     hostPath:
-      path: '/usr/share/logstash/config'
+      path: '/usr/share/logstash'
     local: 
       path: ../../../storage/service/logstash
 
