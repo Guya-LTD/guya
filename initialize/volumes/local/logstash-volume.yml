@@ -1,0 +1,36 @@
+# Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+
+# @author [Simon Belete](https://github.com/Simonbelete)
+# @project Guya E-commerce & Guya Express
+# @description Guya Project ocurstates
+
+apiVersion: v1
+
+#  We have defined the kind as PersistentVolume which tells kubernetes 
+# that the yaml file being used is to create the Persistent Volume.
+kind: PersistentVolume
+
+metadata:
+  name: logstash-config
+  labels:
+    type: local
+
+spec:
+  # This spec will define the capacity of PV that we are trying to create.
+  capacity:
+    storage: 0.01Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadOnce
+    # This definition tells the machine that we are trying to create 
+    # volume under this path on the underlying infrastructure.
+    hostPath:
+      path: '/usr/share/logstash/config'
+    local: 
+      path: ../../../storage/service/logstash/config
+
