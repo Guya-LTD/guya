@@ -16,7 +16,7 @@ apiVersion: v1
 kind: PersistentVolume
 
 metadata:
-  name: logstash-config
+  name: pv-logstash
   labels:
     type: local
 
@@ -32,5 +32,5 @@ spec:
     hostPath:
       path: '/usr/share/logstash/config'
     local: 
-      path: ../../../storage/service/logstash/config
+      path: ../../../storage/service/logstash
 
