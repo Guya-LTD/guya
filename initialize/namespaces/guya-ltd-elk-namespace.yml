@@ -11,23 +11,7 @@
 
 apiVersion: v1
 
-kind: Service
+kind: Namespace
 
 metadata:
-  name: logstash-udp
-
-spec:
-  # This defines which pods are going to be represented by this Service
-  # The service becomes a network endpoint for either other services
-  # or maybe external users to connect to (eg browser)
-  selector:
-    app: logstash-udp
-
-  type: ClusterIP
-
-  ports:
-  - name: tcp
-    # Inside the cluster, what port does the service expose?
-    port: 514
-    targetPort: 514
-    protocol: UDP
+  name: guya-ltd-elk

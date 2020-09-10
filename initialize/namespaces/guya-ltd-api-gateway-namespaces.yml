@@ -11,23 +11,7 @@
 
 apiVersion: v1
 
-kind: Service
+kind: Namespace
 
 metadata:
-  name: logstash-tcp
-
-spec:
-  # This defines which pods are going to be represented by this Service
-  # The service becomes a network endpoint for either other services
-  # or maybe external users to connect to (eg browser)
-  selector:
-    app: logstash-tcp
-
-  type: ClusterIP
-
-  ports:
-  - name: tcp
-    # Inside the cluster, what port does the service expose?
-    port: 5044
-    targetPort: 5044
-    protocol: TCP
+  name: guya-ltd-api-gateway
