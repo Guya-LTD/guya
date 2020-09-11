@@ -27,9 +27,21 @@ delete-namespace: ## Delete all namespace including the services, pods, deployme
 install-helm: ## Install Helm repo manager
 	./scripts/install_helm.sh
 
+.PHONY: install-elasticsearch
+install-elasticsearch: ##
+	./elasticsearch/install_minikube_addons.sh
+	./elasticsearch/install_elasticsearch.sh
+
+.PHONY: install-kibana
+install-kibana: ##
+	./kibana/install_kibana.sh
+
+.PHONY: install-logstash
+install-logstash: ##
+	./logstash/install_logstash.sh
+
 .PHONY: install-elk
-install-elk: ## Install Elastic Stack to namespace
-	./scripts/install_elk.sh
+install-elk: install-elasticsearch install-kibana install-logstash ## Install Elastic Stack to namespace
 
 .PHONY: init
 init: create-namespace # Initalize ALL
