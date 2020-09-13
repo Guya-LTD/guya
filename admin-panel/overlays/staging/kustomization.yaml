@@ -13,7 +13,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 
 kind: Kustomization
 
-resources:
-# Services
-- shop-web/overlays/production
-- shop-web/overlays/production
+namespace: 'guya-ltd'
+
+bases:
+- ../../base
+
+patches:
+- replica_count.yaml
+- service.yaml

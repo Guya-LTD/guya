@@ -1,7 +1,7 @@
 # Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
 # Unauthorized copying of this file, via any medium is strictly prohibited
 # Proprietary and confidential
-
+ 
 # This file is subject to the terms and conditions defined in
 # file 'LICENSE.txt', which is part of this source code package.
 
@@ -9,11 +9,24 @@
 # @project Guya E-commerce & Guya Express
 # @description Guya Project ocurstates
 
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: apps/v1
 
-kind: Kustomization
+kind: Deployment
 
-resources:
-# Services
-- shop-web/overlays/production
-- shop-web/overlays/production
+metadata:
+  name: admin-panel
+
+spec:
+  selector:
+    matchLabels:
+      app: admin-panel
+
+  template:
+    metadata:
+      labels:
+        app: admin-panel
+    
+    spec:
+      containers:
+      - name: admin-panel
+        image: guyaltd/admin-panel

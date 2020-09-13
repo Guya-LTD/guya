@@ -1,0 +1,34 @@
+# Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+
+# @author [Simon Belete](https://github.com/Simonbelete)
+# @project Guya E-commerce & Guya Express
+# @description Guya Project ocurstates
+
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: admin-panel
+
+spec:
+  # This defines which pods are going to be represented by this Service
+  # The service becomes a network endpoint for either other services
+  # or maybe external users to connect to (eg browser)
+  selector:
+    app: admin-panel
+
+  type: NodePort
+  #type: LoadBalancer
+
+  ports:
+  - name: http
+    # Inside the cluster, what port does the service expose?
+    port: 80
+    # Which port on the node is the service available through?
+    nodePort: 30110
