@@ -17,4 +17,4 @@ metadata:
   name: admin-panel
 
 spec:
-  replicas: 2
+  replicas: 1
