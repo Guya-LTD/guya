@@ -9,11 +9,12 @@
 # @project Guya E-commerce & Guya Express
 # @description Guya Project ocurstates
 
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: apps/v1
 
-kind: Kustomization
+kind: Deployment
 
-resources:
-# Services
-- branch/overlays/production
-- shop-web/overlays/production
+metadata:
+  name: branch
+
+spec:
+  replicas: 2

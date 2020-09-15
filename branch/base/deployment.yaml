@@ -1,0 +1,49 @@
+# Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+ 
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+
+# @author [Simon Belete](https://github.com/Simonbelete)
+# @project Guya E-commerce & Guya Express
+# @description Guya Project ocurstates
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: branch
+
+spec:
+  selector:
+    matchLabels:
+      app: branch
+
+  template:
+    metadata:
+      labels:
+        app: branch
+    
+    spec:
+      containers:
+      - name: branch
+        image: guyaltd/branch
+        env:
+        - name: ENV
+          value: dev
+        - name: MONGODB_USERNAME
+          value: user_Rd5gCc
+        - name: MONGODB_PASSWORD
+          value: 2b5a7b706a
+        - name: MONGODB_DB
+          value: db_yDcZ7x
+        - name: MONGODB_HOST
+          value: http://mongodb
+        - name: MONGODB_PORT
+          value: 27017
+        - name: HOST
+          value: 0.0.0.0
+        - name: PORT
+          value: 80

@@ -1,0 +1,26 @@
+image.tag: 4.1.1
+
+mongodbRootPassword: 2b5a7b706a
+
+mongodbUsername: user_Rd5gCc
+
+mongodbDatabase: db_yDcZ7x
+
+# Set to true to use StatefulSet instead of Deployment even when replicaSet.enalbed=false
+useStatefulSet: true
+
+metrics:
+  # Start a side-car prometheus exporter
+  enabled: true
+
+service:
+  # MongoDB service port
+  port: 27017
+
+replicaSet:
+  # Switch to enable/disable replica set configuration
+  enabled: true
+
+persistence:
+  # Size of data volume
+  size: 2Gi

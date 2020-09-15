@@ -5,6 +5,8 @@ antiAffinity: "soft"
 # Shrink default JVM heap.
 esJavaOpts: "-Xmx128m -Xms128m"
 
+replicas: 1
+
 # Allocate smaller chunks of memory per pod.
 resources:
   requests:
@@ -17,7 +19,7 @@ resources:
 # Request smaller persistent volumes.
 volumeClaimTemplate:
   accessModes: [ "ReadWriteOnce" ]
-  storageClassName: "standard"
+  storageClassName: "local-path"
   resources:
     requests:
       storage: 100M
