@@ -17,4 +17,4 @@ metadata:
   name: shop-web
 
 spec:
-  replicas: 2
+  replicas: 1

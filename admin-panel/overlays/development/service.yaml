@@ -31,4 +31,4 @@ spec:
     # Inside the cluster, what port does the service expose?
     port: 3000
     # Which port on the node is the service available through?
-    nodePort: 30200
+    nodePort: 31000
