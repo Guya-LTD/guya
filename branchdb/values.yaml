@@ -1,4 +1,5 @@
-image.tag: 4.1.1
+image:
+  tag: 4.1.1
 
 mongodbRootPassword: 2b5a7b706a
 
@@ -19,7 +20,7 @@ service:
 
 replicaSet:
   # Switch to enable/disable replica set configuration
-  enabled: true
+  enabled: false
 
 persistence:
   # Size of data volume

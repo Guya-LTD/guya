@@ -36,13 +36,13 @@ spec:
           value: "dev"
         # Mongo DB Vars
         - name: MONGODB_USERNAME
-          value: "user_Rd5gCc"
+          value: "user_op0Mer"
         - name: MONGODB_PASSWORD
-          value: "2b5a7b706a"
+          value: "ff8c886615"
         - name: MONGODB_DB
-          value: "db_yDcZ7x"
+          value: "db_JqC11r"
         - name: MONGODB_HOST
-          value: "http://mongodb"
+          value: "http://carddb"
         - name: MONGODB_PORT
           value: "27017"
         # Production Env

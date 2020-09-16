@@ -29,7 +29,7 @@ install-helm: ## Install Helm repo manager
 
 .PHONY: install-elasticsearch
 install-elasticsearch: ##
-	./elasticsearch/install_minikube_addons.sh
+	#./elasticsearch/install_minikube_addons.sh
 	./elasticsearch/install_elasticsearch.sh
 
 .PHONY: install-kibana

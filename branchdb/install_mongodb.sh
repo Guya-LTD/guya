@@ -1,3 +1,7 @@
 #!/bin/sh
 
-helm install --namespace guya-ltd mongodb --version 9.1.2 stable/mongodb --values branchdb/values.yaml
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+#helm repo update
+
+helm install --namespace guya-ltd mongodb --version 9.1.2 bitnami/mongodb --values values.yaml
