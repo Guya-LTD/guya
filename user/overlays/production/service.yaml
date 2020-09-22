@@ -14,21 +14,18 @@ apiVersion: v1
 kind: Service
 
 metadata:
-  name: xpress-web
+  name: chat
 
 spec:
   # This defines which pods are going to be represented by this Service
   # The service becomes a network endpoint for either other services
   # or maybe external users to connect to (eg browser)
   selector:
-    app: xpress-web
+    app: chat
 
-  type: NodePort
-  #type: LoadBalancer
+  type: LoadBalancer
 
   ports:
   - name: http
     # Inside the cluster, what port does the service expose?
     port: 3000
-    # Which port on the node is the service available through?
-    nodePort: 30003

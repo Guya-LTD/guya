@@ -1,0 +1,56 @@
+# Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+ 
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+
+# @author [Simon Belete](https://github.com/Simonbelete)
+# @project Guya E-commerce & Guya Express
+# @description Guya Project ocurstates
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: user 
+
+spec:
+  selector:
+    matchLabels:
+      app: user 
+
+  template:
+    metadata:
+      labels:
+        app: user
+    
+    spec:
+      containers:
+      - name: user
+        image: guyaltd/user
+        #imagePullPolicy: Always
+        env:
+        - name: ENV 
+          value: "dev"
+        # Postgress  DB 
+        - name: DATABASE_URI
+          value: "postgresql://user_56ElsY:6ae6c02ca8@userdb-postgresql.guya-ltd.svc.cluster.local:5432/db_DAkF1V9loX"
+        # Production Env
+        - name: HOST
+          value: "0.0.0.0"
+        - name: PORT
+          value: "5000"
+        # Flask Development ENV
+        - name: FLASK_ENV
+          value: development
+        - name: FLASK_RUN_HOST
+          value: "0.0.0.0"
+        - name: FLASK_RUN_PORT
+          value: "5000"
+        # Logstash Logging Vars
+        - name: LOGGING_HOST
+          value: "logstash-logstash-headless.guya-ltd.svc.cluster.local"
+        - name: LOGGING_PORT
+          value: "9200"
