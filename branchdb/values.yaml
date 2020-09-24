@@ -1,6 +1,3 @@
-image:
-  tag: 4.1.1
-
 mongodbRootPassword: 2b5a7b706a
 
 mongodbUsername: user_Rd5gCc
