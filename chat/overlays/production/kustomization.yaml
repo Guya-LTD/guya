@@ -18,3 +18,4 @@ bases:
 
 patches:
 - replica_count.yaml
+- service.yaml
