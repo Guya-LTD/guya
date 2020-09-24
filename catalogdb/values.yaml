@@ -1,11 +1,8 @@
-image:
-  tag: 4.1.1
-
-mongodbRootPassword: ff8c886615
-
-mongodbUsername: user_op0Mer
-
-mongodbDatabase: db_JqC11r
+auth:
+  rootPassword: ea6faee84c
+  username: user_89Tw15W
+  password: 7ad89b9279
+  database: db_u7SqbAA
 
 # Set to true to use StatefulSet instead of Deployment even when replicaSet.enalbed=false
 useStatefulSet: true
