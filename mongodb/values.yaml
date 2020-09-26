@@ -7,11 +7,11 @@ auth:
 initdbScripts:
   initdb.js: |
     // Branch db
-    use db_8j2m19h
+    //use db_8j2m19h
     // Cart db
-    use db_JqC11r
+    //use db_JqC11r
     // Payment db
-    use db_fmqFcq0
+    //use db_fmqFcq0
 
     // Branch User
     db.createUser(
