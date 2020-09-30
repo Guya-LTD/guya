@@ -513,6 +513,69 @@ Example:
 $ curl http://api.example.com/paths?age=ge:18&name=abebe
 ```
 
+### Status Code usage
+
+* `200` Ok, usage `GET`, `/api/v1/items`, `/api/v1/items/12`
+* `201` No Content
+* `401` Unauthorized
+* `403` Forbidden
+* `400` Not Found
+* `400` Bad Request, `ALL`
+
+### Api Response Guide
+
+
+```javascript
+    HTTP/1.1 200
+    Content-Type: application/json
+
+{
+    status_code: 200,
+    status: "OK",
+    message: "All items retrived",
+    error: {
+        message: "Error Message",
+        type: "ValueError",
+        code: 2500,
+        trace_id: "dsfsf"
+        ...
+    },
+    error: {
+        email: {
+            message: "Error Message",
+            type: "ValueError",
+            code: 2500,
+            trace_id: "dsfsf"
+            ...
+        }
+    }
+    pagination: {
+        count: 100,
+        limit: 10,
+        page: 2
+    },
+    // For Multi
+    data: [
+        {},
+    ],
+    // Single item
+    data: {
+        id: "id"
+        name: "User",
+        created_at: ""
+    }
+}
+```
+
+### Api Sending Request
+
+```javascript
+{
+    username: "User one",
+    password: "password"
+}
+```
+
 [elk-stack]: https://www.elastic.co/elk-stack
 [stack-features]: https://www.elastic.co/products/stack
 [paid-features]: https://www.elastic.co/subscriptions
