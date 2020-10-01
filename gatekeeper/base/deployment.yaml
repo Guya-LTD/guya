@@ -34,17 +34,13 @@ spec:
         env:
         - name: ENV 
           value: "dev"
-        # Mongo DB Vars
-        - name: MONGODB_USERNAME
-          value: "user_Rd5gCc"
-        - name: MONGODB_PASSWORD
-          value: "2b5a7b706a"
-        - name: MONGODB_DB
-          value: "db_yDcZ7x"
-        - name: MONGODB_HOST
-          value: "gatekeeper-mongodb.guya-ltd.svc.cluster.local"
-        - name: MONGODB_PORT
-          value: "27017"
+        # Redis db
+        - name: REDIS_HOST
+          value: "redis-gatekeeper-master.guya-ltd.svc.cluster.local"
+        - name: REDIS_PORT
+          value: "6379"
+        - name: REDIS_DB
+          value: "0"
         # Production Env
         - name: HOST
           value: "0.0.0.0"
@@ -59,6 +55,9 @@ spec:
           value: "5000"
         # Logstash Logging Vars
         - name: LOGGING_HOST
-          value: "svc."
+          value: "logstash-logstash-headless.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
-          value: "9200"
+          value: "9600"
+        # Services URL
+        - name: USER_URL
+          value: "http://user.guya-ltd.svc.cluster.local:5000"
