@@ -15,7 +15,6 @@ initdbScripts:
 
     // Branch User
     use db_8j2m19h
-    //db.user.insert({name: "Ada Lovelace", age: 205})
     db.createUser(
       {
         user : "user_P0SN5bH",
@@ -31,7 +30,6 @@ initdbScripts:
 
     // Cart User
     use db_JqC11r
-    //db.user.insert({name: "Ada Lovelace", age: 205})
     db.createUser(
       {
         user : "user_op0Mer",
@@ -47,7 +45,6 @@ initdbScripts:
 
     // Payment user
     use db_fmqFcq0
-    //db.user.insert({name: "Ada Lovelace", age: 205})
     db.createUser(
       {
         user : "user_9hOfBET",

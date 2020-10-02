@@ -36,13 +36,13 @@ spec:
           value: "dev"
         # Mongo DB Vars
         - name: MONGODB_USERNAME
-          value: "user_Rd5gCc"
+          value: "user_P0SN5bH"
         - name: MONGODB_PASSWORD
-          value: "2b5a7b706a"
+          value: "c2b0801598"
         - name: MONGODB_DB
-          value: "db_yDcZ7x"
+          value: "db_8j2m19h"
         - name: MONGODB_HOST
-          value: "branch-mongodb.guya-ltd.svc.cluster.local"
+          value: "mongodb.guya-ltd.svc.cluster.local"
         - name: MONGODB_PORT
           value: "27017"
         # Production Env
@@ -59,6 +59,6 @@ spec:
           value: "5000"
         # Logstash Logging Vars
         - name: LOGGING_HOST
-          value: "svc."
+          value: "logstash-logstash.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
-          value: "9200"
+          value: "5400"
