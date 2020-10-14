@@ -17,5 +17,5 @@ bases:
 - ../../base
 
 patches:
-- replica_count.yaml
+#- replica_count.yaml
 - service.yaml

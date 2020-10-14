@@ -16,9 +16,8 @@ kind: Kustomization
 namespace: 'guya-ltd'
 
 commonLabels:
-  app: branch
+  app: cart
 
 resources:
 - deployment.yaml
-- configMap.yaml
 - service.yaml

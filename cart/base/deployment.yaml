@@ -14,22 +14,22 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: branch
+  name: cart
 
 spec:
   selector:
     matchLabels:
-      app: branch
+      app: cart
 
   template:
     metadata:
       labels:
-        app: branch
+        app: cart
     
     spec:
       containers:
-      - name: branch
-        image: guyaltd/branch
+      - name: cart
+        image: guyaltd/cart
         #imagePullPolicy: Always
         env:
         - name: ENV 
@@ -42,7 +42,7 @@ spec:
         - name: MONGODB_DB
           value: "db_JqC11r"
         - name: MONGODB_HOST
-          value: "http://carddb"
+          value: "mongodb.guya-ltd.svc.cluster.local"
         - name: MONGODB_PORT
           value: "27017"
         # Production Env
@@ -59,6 +59,6 @@ spec:
           value: "5000"
         # Logstash Logging Vars
         - name: LOGGING_HOST
-          value: "svc."
+          value: "logstash-logstash.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
-          value: "9200"
+          value: "5400"
