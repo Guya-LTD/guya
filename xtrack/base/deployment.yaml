@@ -30,3 +30,10 @@ spec:
       containers:
       - name: xtrack
         image: guyaltd/xtrack
+        env:
+        - name: NODE_ENV
+          value: "development"
+        - name: HOST
+          value: "0.0.0.0"
+        - name: PORT
+          value: "3000"
