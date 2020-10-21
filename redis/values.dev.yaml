@@ -1,0 +1,11 @@
+# Local registery images
+global:
+  imageRegistry: "localhost:5000"
+
+image: 
+  registry: "localhost:5000"
+  repository: "bitnami/redis"
+  tag: "6.0.8-debian-10-r0"
+
+cluster:
+  enabled: false
