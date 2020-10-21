@@ -1,8 +1,15 @@
+# Local registery images
 global:
+  imageRegistry: "localhost:5000"
   postgresql:
     postgresqlDatabase: db_DAkF1V9jeX
     postgresqlUsername: user_56EMsY
     postgresqlPassword: 6ae6c09ca8
+
+image: 
+  registry: "localhost:5000"
+  repository: "bitnami/postgresql"
+  tag: "11.9.0-debian-10-r34"
 
 #postgresqlDatabase: db_DAkF1V9jeX
 #postgresqlUsername: user_56EMsY
