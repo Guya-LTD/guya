@@ -1,0 +1,83 @@
+# Local registery images
+global:
+  imageRegistry: "localhost:5000"
+
+image: 
+  registry: "localhost:5000"
+  repository: "bitnami/mongodb"
+  tag: "4.4.1-debian-10-r13"
+
+auth:
+  rootPassword: ea6faee84c
+  username: user_89Tw15W
+  password: 7ad89b9279
+  database: db_u7SqbAA
+
+initdbScripts:
+  initdb.js: |
+    // Branch db
+    //use db_8j2m19h
+    // Cart db
+    //use db_JqC11r
+    // Payment db
+    //use db_fmqFcq0
+
+    // Branch User
+    use db_8j2m19h
+    db.createUser(
+      {
+        user : "user_P0SN5bH",
+        pwd  : "c2b0801598",
+        roles : [
+          {
+            role : "readWrite",
+              db : "db_8j2m19h"
+          }
+        ]
+      }
+    )
+
+    // Cart User
+    use db_JqC11r
+    db.createUser(
+      {
+        user : "user_op0Mer",
+        pwd  : "ff8c886615",
+        roles : [
+          {
+            role : "readWrite",
+              db : "db_JqC11r"
+          }
+        ]
+      }
+    )
+
+    // Payment user
+    use db_fmqFcq0
+    db.createUser(
+      {
+        user : "user_9hOfBET",
+        pwd  : "d8fc7a94fb",
+        roles : [
+          {
+            role : "readWrite",
+              db : "db_fmqFcq0"
+          }
+        ]
+      }
+    )
+
+# Set to true to use StatefulSet instead of Deployment even when replicaSet.enalbed=false
+useStatefulSet: true
+
+service:
+  # MongoDB service port
+  port: 27017
+
+replicaSet:
+  # Switch to enable/disable replica set configuration
+  enabled: false
+
+persistence:
+  # Size of data volume
+  size: 10Gi
