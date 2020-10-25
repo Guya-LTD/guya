@@ -14,16 +14,16 @@ apiVersion: v1
 kind: Service
 
 metadata:
-  name: chat
+  name: mocking-server
 
 spec:
   # This defines which pods are going to be represented by this Service
   # The service becomes a network endpoint for either other services
   # or maybe external users to connect to (eg browser)
   selector:
-    app: chat
+    app: mocking-server
 
-  type: ClusterIP
+  #type: ClusterIP
 
   ports:
   - name: http

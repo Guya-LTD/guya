@@ -34,6 +34,8 @@ spec:
         env:
         - name: ENV 
           value: "dev"
+        - name: SECRET_KEY
+          value: "ko8203nbl3srepqnvhdokst382mgsk1926"
         # Redis db
         - name: REDIS_HOST
           value: "redis-gatekeeper-master.guya-ltd.svc.cluster.local"
@@ -58,6 +60,14 @@ spec:
           value: "logstash-logstash-headless.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
           value: "9600"
-        # Services URL
+        # URL endpoints
+        - name: IS_MOCKING
+          value: "true"
+        - name: MOCKING_SERVER_URL
+          value: "mocking-server.guya-ltd.svc.cluster.local"
+        - name: MOCKING_SERVER_PORT
+          value: "5000"
         - name: USER_URL
-          value: "http://user.guya-ltd.svc.cluster.local:5000"
+          value: "user.guya-ltd.svc.cluster.local"
+        - name: USER_PORT
+          value: "5000"
