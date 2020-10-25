@@ -51,8 +51,10 @@ spec:
         - name: PORT
           value: "5000"
         # Flask Development ENV
+        - name: FLASK_APP
+          value: "branch"
         - name: FLASK_ENV
-          value: development
+          value: "development"
         - name: FLASK_RUN_HOST
           value: "0.0.0.0"
         - name: FLASK_RUN_PORT
@@ -62,3 +64,15 @@ spec:
           value: "logstash-logstash.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
           value: "5400"
+        # URL endpoints
+        - name: IS_MOCKING
+          value: "true"
+          #value: false
+        - name: MOCKING_SERVER_URL
+          value: "mocking-server.guya-ltd.svc.cluster.local"
+        - name: MOCKING_SERVER_PORT
+          value: "5000"
+        - name: GATEKEEPER_URL
+          value: "gatekeeper.guya-ltd.svc.cluster.local"
+        - name: GATEKEEPER_PORT
+          value: "5000"
