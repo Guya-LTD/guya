@@ -1,0 +1,31 @@
+# Local registery images
+global:
+  imageRegistry: "localhost:5000"
+
+image: "localhost:5000/docker.elastic.co/logstash/logstash"
+
+persistence:
+  enabled: true
+
+service:
+  ports:
+  - name: log-udp
+    port: 540
+    protocol: UDP
+  - name: log-tcp
+    port: 5400
+    protocol: TCP
+
+#uptime.conf: |
+#    input { exec { command => "uptime" interval => 30 } }
+#    output { elasticsearch { hosts => ["http://elasticsearch-master.guya-ltd-elk.svc.cluster.local:9200"] index => "logstash" } }
+
+logstashConfig:
+  logstash.yml: |
+    http.host: 0.0.0.0
+    xpack.monitoring.enabled: false
+logstashPipeline:
+  logstash.conf: |
+    input { tcp { port => 5400 codec => json } udp { port => 540 codec => json } }
+    filter{ json { source => "message" } }
+    output { elasticsearch { hosts => ["http://elasticsearch-master.guya-ltd-elk.svc.cluster.local:9200"] index => "guyalogs" } }
