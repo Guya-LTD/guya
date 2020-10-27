@@ -36,19 +36,14 @@ spec:
           value: "dev"
         - name: SECRET_KEY
           value: "ko8203nbl3srepqnvhdokst382mgsk1926"
-        # Redis db
-        - name: REDIS_HOST
-          value: "redis-gatekeeper-master.guya-ltd.svc.cluster.local"
-        - name: REDIS_PORT
-          value: "6379"
-        - name: REDIS_DB
-          value: "0"
         # Production Env
         - name: HOST
           value: "0.0.0.0"
         - name: PORT
           value: "5000"
         # Flask Development ENV
+        - name: FLASK_APP
+          value: "gatekeeper"
         - name: FLASK_ENV
           value: development
         - name: FLASK_RUN_HOST
@@ -59,7 +54,7 @@ spec:
         - name: LOGGING_HOST
           value: "logstash-logstash-headless.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
-          value: "9600"
+          value: "5400"
         # URL endpoints
         - name: IS_MOCKING
           value: "true"
