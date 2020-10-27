@@ -1,0 +1,55 @@
+# Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+ 
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+
+# @author [Simon Belete](https://github.com/Simonbelete)
+# @project Guya E-commerce & Guya Express
+# @description Guya Project ocurstates
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: profanity-detector
+
+spec:
+  selector:
+    matchLabels:
+      app: profanity-detector
+
+  template:
+    metadata:
+      labels:
+        app: profanity-detector
+    
+    spec:
+      containers:
+      - name: profanity-detector
+        image: guyaltd/profanity-detector
+        #imagePullPolicy: Always
+        env:
+        - name: ENV 
+          value: "dev"
+        # Production Env
+        - name: HOST
+          value: "0.0.0.0"
+        - name: PORT
+          value: "5000"
+        # Flask Development ENV
+        - name: FLASK_APP
+          value: "profanity-detector"
+        - name: FLASK_ENV
+          value: "development"
+        - name: FLASK_RUN_HOST
+          value: "0.0.0.0"
+        - name: FLASK_RUN_PORT
+          value: "5000"
+        # Logstash Logging Vars
+        - name: LOGGING_HOST
+          value: "logstash-logstash.guya-ltd-elk.svc.cluster.local"
+        - name: LOGGING_PORT
+          value: "5400"
