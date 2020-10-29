@@ -8,6 +8,7 @@ image:
   tag: "4.4.1-debian-10-r13"
 
 auth:
+  #rootUsername: root
   rootPassword: ea6faee84c
   username: user_89Tw15W
   password: 7ad89b9279
@@ -21,6 +22,24 @@ initdbScripts:
     //use db_JqC11r
     // Payment db
     //use db_fmqFcq0
+
+    // Enable standalone replicaset
+    //rs.initiate()
+
+    // Catalog
+    use db_bnhr6l9
+    db.createUser(
+      {
+        user : "user_dlvliy",
+        pwd  : "788ad373bc",
+        roles : [
+          {
+            role : "readWrite",
+              db : "db_bnhr6l9"
+          }
+        ]
+      }
+    )
 
     // Branch User
     use db_8j2m19h
@@ -68,16 +87,19 @@ initdbScripts:
     )
 
 # Set to true to use StatefulSet instead of Deployment even when replicaSet.enalbed=false
-useStatefulSet: true
+#useStatefulSet: true
 
-service:
+#service:
   # MongoDB service port
-  port: 27017
+#  port: 27017
 
-replicaSet:
-  # Switch to enable/disable replica set configuration
-  enabled: false
+# Switch to enable/disable replica set configuration
+architecture: replicaset
+#replicaCount: 1
 
-persistence:
+#arbiter:
+#  enabled: false
+
+#persistence:
   # Size of data volume
-  size: 10Gi
+#  size: 10Gi
