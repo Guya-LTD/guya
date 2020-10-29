@@ -1,0 +1,70 @@
+# Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+ 
+# This file is subject to the terms and conditions defined in
+# file 'LICENSE.txt', which is part of this source code package.
+
+# @author [Simon Belete](https://github.com/Simonbelete)
+# @project Guya E-commerce & Guya Express
+# @description Guya Project ocurstates
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: order
+
+spec:
+  selector:
+    matchLabels:
+      app: order
+
+  template:
+    metadata:
+      labels:
+        app: order
+    
+    spec:
+      containers:
+      - name: order
+        image: guyaltd/order
+        #imagePullPolicy: Always
+        env:
+        - name: ENV 
+          value: "dev"
+        # Mongo DB Vars
+        - name: MONGODB_USERNAME
+          value: "user_P0SN5bH"
+        - name: MONGODB_PASSWORD
+          value: "c2b0801598"
+        - name: MONGODB_DB
+          value: "db_8j2m19h"
+        - name: MONGODB_HOST
+          value: "mongodb.guya-ltd.svc.cluster.local"
+        - name: MONGODB_PORT
+          value: "27017"
+        # Production Env
+        - name: HOST
+          value: "0.0.0.0"
+        - name: PORT
+          value: "5000"
+        # Flask Development ENV
+        - name: FLASK_APP
+          value: "order"
+        - name: FLASK_ENV
+          value: "development"
+        - name: FLASK_RUN_HOST
+          value: "0.0.0.0"
+        - name: FLASK_RUN_PORT
+          value: "5000"
+        # Logstash Logging Vars
+        - name: LOGGING_HOST
+          value: "logstash-logstash.guya-ltd-elk.svc.cluster.local"
+        - name: LOGGING_PORT
+          value: "5400"
+        # URL endpoints
+        - name: IS_MOCKING
+          #value: "true"
+          value: "false"
