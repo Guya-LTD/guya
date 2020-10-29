@@ -16,7 +16,7 @@ kind: Kustomization
 namespace: 'guya-ltd'
 
 commonLabels:
-  app: mongo-connector
+  app: mongo-indexer
 
 resources:
 - deployment.yaml

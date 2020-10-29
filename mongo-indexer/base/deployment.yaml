@@ -1,7 +1,7 @@
 # Copyright (C) Guya , PLC - All Rights Reserved (As Of Pending...)
 # Unauthorized copying of this file, via any medium is strictly prohibited
 # Proprietary and confidential
-
+ 
 # This file is subject to the terms and conditions defined in
 # file 'LICENSE.txt', which is part of this source code package.
 
@@ -9,23 +9,24 @@
 # @project Guya E-commerce & Guya Express
 # @description Guya Project ocurstates
 
-apiVersion: v1
+apiVersion: apps/v1
 
-kind: Service
+kind: Deployment
 
 metadata:
-  name: mongo-connector
+  name: mongo-indexer
 
 spec:
-  # This defines which pods are going to be represented by this Service
-  # The service becomes a network endpoint for either other services
-  # or maybe external users to connect to (eg browser)
   selector:
-    app: mongo-connector
+    matchLabels:
+      app: mongo-indexer
 
-  #type: ClusterIP
-
-  ports:
-  - name: http
-    # Inside the cluster, what port does the service expose?
-    port: 5000
+  template:
+    metadata:
+      labels:
+        app: mongo-indexer
+    
+    spec:
+      containers:
+      - name: mongo-indexer
+        image: guyaltd/mongo-indexer
