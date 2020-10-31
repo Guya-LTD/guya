@@ -16,6 +16,6 @@ kind: Kustomization
 bases:
 - ../../base
 
-patches:
+patchesStrategicMerge:
 - replica_count.yaml
 - service.yaml
