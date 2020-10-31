@@ -1,7 +1,0 @@
-postgresqlDatabase: db_DAkF1V9loX
-postgresqlUsername: user_56ElsY
-postgresqlPassword: 6ae6c02ca8
-
-persistence:
-  # Size of data volume
-  size: 2Gi
