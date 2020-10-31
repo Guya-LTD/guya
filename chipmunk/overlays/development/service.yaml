@@ -32,3 +32,13 @@ spec:
     port: 5000
     # Which port on the node is the service available through?
     nodePort: 30008
+  - name: mailhog-ui
+    # Inside the cluster, what port does the service expose?
+    port: 8025
+    # Which port on the node is the service available through?
+    nodePort: 30100
+  - name: mailhog-smtp
+    # Inside the cluster, what port does the service expose?
+    port: 1025
+    # Which port on the node is the service available through?
+    nodePort: 31125

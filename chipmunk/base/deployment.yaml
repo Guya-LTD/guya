@@ -31,3 +31,10 @@ spec:
       containers:
       - name: chipmunk
         image: guyaltd/chipmunk
+        env:
+        - name: MAILER_DSN
+          value: "smtp://localhost:1025"
+        - name: ACCOUNT_SENDER_EMAIL
+          value: "admin@localhost"
+      - name: mailhog
+        image: guyaltd/mailhog
