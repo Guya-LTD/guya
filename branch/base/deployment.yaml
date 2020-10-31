@@ -42,7 +42,7 @@ spec:
         - name: MONGODB_DB
           value: "db_8j2m19h"
         - name: MONGODB_HOST
-          value: "mongodb.guya-ltd.svc.cluster.local"
+          value: "mongodb-headless.guya-ltd.svc.cluster.local"
         - name: MONGODB_PORT
           value: "27017"
         # Production Env
@@ -69,7 +69,7 @@ spec:
           value: "true"
           #value: false
         - name: MOCKING_SERVER_URL
-          value: "mocking-server.guya-ltd.svc.cluster.local"
+          value: "mocking-server.guya-ltd.svc.cluster.local" 
         - name: MOCKING_SERVER_PORT
           value: "5000"
         - name: GATEKEEPER_URL
