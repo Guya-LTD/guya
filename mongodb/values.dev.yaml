@@ -95,7 +95,7 @@ initdbScripts:
 
 # Switch to enable/disable replica set configuration
 architecture: replicaset
-#replicaCount: 1
+replicaCount: 1
 
 #arbiter:
 #  enabled: false
