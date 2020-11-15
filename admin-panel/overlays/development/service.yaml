@@ -29,6 +29,6 @@ spec:
   ports:
   - name: http
     # Inside the cluster, what port does the service expose?
-    port: 3000
+    port: 80
     # Which port on the node is the service available through?
     nodePort: 30001

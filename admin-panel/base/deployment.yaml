@@ -30,3 +30,8 @@ spec:
       containers:
       - name: admin-panel
         image: guyaltd/admin-panel
+        env:
+        - name: PORT
+          value: "80"
+        - name: API_GATEWAY
+          value: "http://127.0.0.1:50000"
