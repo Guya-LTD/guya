@@ -43,8 +43,10 @@ spec:
         - name: PORT
           value: "5000"
         # Flask Development ENV
+        - name: FLASK_APP
+          value: "user"
         - name: FLASK_ENV
-          value: development
+          value: "development"
         - name: FLASK_RUN_HOST
           value: "0.0.0.0"
         - name: FLASK_RUN_PORT

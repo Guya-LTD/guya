@@ -37,3 +37,14 @@ spec:
           value: "0.0.0.0"
         - name: PORT
           value: "3000"
+      - name: xtrack-simulator
+        image: guyaltd/xtrack-simulator
+        env:
+        - name: NODE_ENV
+          value: "development"
+        - name: HOST
+          value: "0.0.0.0"
+        - name: PORT
+          value: "4000"
+        - name: XTRACK_URL
+          value: "http://127.0.0.1:3000"
