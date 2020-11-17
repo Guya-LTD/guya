@@ -32,6 +32,6 @@ spec:
         image: guyaltd/admin-panel
         env:
         - name: PORT
-          value: "80"
+          value: "3000"
         - name: API_GATEWAY
           value: "http://127.0.0.1:50000"
