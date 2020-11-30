@@ -56,3 +56,6 @@ spec:
           value: "logstash-logstash-headless.guya-ltd.svc.cluster.local"
         - name: LOGGING_PORT
           value: "9600"
+        # VArs
+        - name: GATEKEEPER_URL
+          value: "gatekeeper.guya-ltd.svc.cluster.local"

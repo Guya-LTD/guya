@@ -56,13 +56,7 @@ spec:
         - name: LOGGING_PORT
           value: "5400"
         # URL endpoints
-        - name: IS_MOCKING
-          value: "true"
         - name: MOCKING_SERVER_URL
           value: "mocking-server.guya-ltd.svc.cluster.local"
-        - name: MOCKING_SERVER_PORT
-          value: "5000"
         - name: USER_URL
           value: "user.guya-ltd.svc.cluster.local"
-        - name: USER_PORT
-          value: "5000"

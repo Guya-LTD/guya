@@ -533,6 +533,9 @@ $ curl http://api.example.com/paths?age=ge:18&name=abebe
     status_code: 200,
     status: "OK",
     message: "All items retrived",
+    links: {
+        slef: "https://api.guya.com/v2/{resource}/{id}"
+    }
     error: {
         message: "Error Message",
         type: "ValueError",
