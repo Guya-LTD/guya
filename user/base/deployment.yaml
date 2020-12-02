@@ -53,9 +53,9 @@ spec:
           value: "5000"
         # Logstash Logging Vars
         - name: LOGGING_HOST
-          value: "logstash-logstash-headless.guya-ltd.svc.cluster.local"
+          value: "logstash-logstash.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
-          value: "9600"
+          value: "5400"
         # VArs
         - name: GATEKEEPER_URL
           value: "gatekeeper.guya-ltd.svc.cluster.local"
