@@ -42,7 +42,7 @@ spec:
         - name: MONGODB_DB
           value: "db_JqC11r"
         - name: MONGODB_HOST
-          value: "mongodb.guya-ltd.svc.cluster.local"
+          value: "mongodb-headless.guya-ltd.svc.cluster.local"
         - name: MONGODB_PORT
           value: "27017"
         # Production Env
