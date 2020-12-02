@@ -27,8 +27,13 @@ spec:
   #type: LoadBalancer
 
   ports:
-  - name: http
+  #- name: refme
     # Inside the cluster, what port does the service expose?
-    port: 50051
+  #  port: 50051 
+  - name: envoy
+    # Is the port your pod will be listening on
+    targetPort: 8080
+    # Inside the cluster, what port does the service expose?
+    port: 80
     # Which port on the node is the service available through?
     nodePort: 30012

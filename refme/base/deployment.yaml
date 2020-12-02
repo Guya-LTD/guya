@@ -30,3 +30,5 @@ spec:
       containers:
       - name: refme
         image: guyaltd/refme
+      - name: envoy
+        image: guyaltd/envoy
