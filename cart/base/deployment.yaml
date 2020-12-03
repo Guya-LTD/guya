@@ -62,3 +62,6 @@ spec:
           value: "logstash-logstash.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
           value: "5400"
+        # URL endpoints
+        - name: GATEKEEPER_URL
+          value: "gatekeeper.guya-ltd.svc.cluster.local"
