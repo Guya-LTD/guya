@@ -35,6 +35,22 @@ spec:
         - name: MAILER_DSN
           value: "smtp://localhost:1025"
         - name: ACCOUNT_SENDER_EMAIL
-          value: "admin@localhost"
+          value: "admin@localhost.com"
+        - name: SMTP_HOST
+          value: "127.0.0.1"
+        - name: SMTP_PORT
+          value: "1025"
+        - name: SMTP_USERNAME
+          value: ""
+        - name: SMTP_PASSWORD
+          value: ""
+        - name: RABBITMQ_HOST
+          value: "127.0.0.1"
+        - name: RABBITMQ_PORT
+          value: "1025"
+        - name: RABBITMQ_USERNAME
+          value: "rabbitmq_user"
+        - name: RABBITMQ_PASSWORD
+          value: "0875e68ce5"
       - name: mailhog
         image: guyaltd/mailhog

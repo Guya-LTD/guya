@@ -1,0 +1,12 @@
+# Local registery images
+global:
+  imageRegistry: "localhost:5000"
+
+image: 
+  registry: "localhost:5000"
+  repository: "bitnami/rabbitmq"
+  tag: "3.8.9-debian-10-r0"
+
+auth:
+  username: rabbitmq_user
+  password: 0875e68ce5
