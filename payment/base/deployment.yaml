@@ -42,7 +42,7 @@ spec:
         - name: MONGODB_DB
           value: "db_fmqFcq0"
         - name: MONGODB_HOST
-          value: "mongodb.guya-ltd.svc.cluster.local"
+          value: "mongodb-headless.guya-ltd.svc.cluster.local"
         - name: MONGODB_PORT
           value: "27017"
         # Production Env
@@ -51,14 +51,19 @@ spec:
         - name: PORT
           value: "5000"
         # Flask Development ENV
+        - name: FLASK_APP
+          value: "payment"
         - name: FLASK_ENV
-          value: development
+          value: "development"
         - name: FLASK_RUN_HOST
           value: "0.0.0.0"
         - name: FLASK_RUN_PORT
           value: "5000"
         # Logstash Logging Vars
         - name: LOGGING_HOST
-          value: "logstash.guya-ltd-elk.svc.cluster.local"
+          value: "logstash-logstash.guya-ltd-elk.svc.cluster.local"
         - name: LOGGING_PORT
-          value: "9200"
+          value: "5400"
+        # URL endpoints
+        - name: GATEKEEPER_URL
+          value: "gatekeeper.guya-ltd.svc.cluster.local"
