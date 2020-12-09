@@ -74,5 +74,3 @@ spec:
           value: "5000"
         - name: GATEKEEPER_URL
           value: "gatekeeper.guya-ltd.svc.cluster.local"
-        - name: GATEKEEPER_PORT
-          value: "5000"
