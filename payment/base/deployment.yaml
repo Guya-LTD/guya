@@ -67,3 +67,9 @@ spec:
         # URL endpoints
         - name: GATEKEEPER_URL
           value: "gatekeeper.guya-ltd.svc.cluster.local"
+        - name: CHIPMUNK_URL
+          value: "chipmunk.guya-ltd.svc.cluster.local"
+        - name: ORDER_URL
+          value: "order.guya-ltd.svc.cluster.local"
+        - name: MOCKING_SERVER_URL
+          value: "mocking-server.guya-ltd.svc.cluster.local"

@@ -1,0 +1,14 @@
+# Local registery images
+global:
+  imageRegistry: "localhost:5000"
+
+image: 
+  registry: "localhost:5000"
+  repository: "bitnami/mysql"
+  tag: "8.0.21-debian-10-r46"
+
+auth:
+  rootPassword: 49f30ef2e2
+  username: user_62cf82
+  database: db_bb762d
+  password: 298a67427b

@@ -30,8 +30,13 @@ spec:
       containers:
       - name: xpress
         image: guyaltd/xpress
+      - name: mysql
+        image: guyaltd/mysql
         #imagePullPolicy: Always
         env:
+        # Database
+        #- name: DATABASE_URL
+        #  value: "mysql://db_bb762d:298a67427b@mysql.guya-ltd.svc.cluster.local:3306/db_bb762d?serverVersion=8.0"
         # Logstash Logging Vars
         - name: LOGGING_HOST
           value: "logstash-logstash-headless.guya-ltd.svc.cluster.local"
