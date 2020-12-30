@@ -35,3 +35,5 @@ spec:
           value: "3000"
         - name: API_GATEWAY
           value: "http://127.0.0.1:50000"
+        - name: REACT_APP_API_GATEWAY
+          value: "http://127.0.0.1:50000"
