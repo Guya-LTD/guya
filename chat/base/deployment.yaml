@@ -31,13 +31,15 @@ spec:
       - name: chat
         image: guyaltd/chat
         env:
+        - name: PORT
+          value: "3000"
         - name: DB_USERNAME
-          value: 
+          value: ""
         - name: DB_PASSWORD
-          value: 
+          value: ""
         - name: DB_NAME
-          value: 
+          value: ""
         - name: DB_HOST
-          value:
+          value: ""
         - name: DB_PORT
-          value:
+          value: ""
