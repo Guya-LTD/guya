@@ -28,7 +28,9 @@ spec:
 
   ports:
   - name: http
+    # Is the port your pod will be listening on
+    targetPort: 3000
     # Inside the cluster, what port does the service expose?
-    port: 3000
+    port: 80
     # Which port on the node is the service available through?
     nodePort: 30003

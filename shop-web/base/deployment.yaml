@@ -30,3 +30,8 @@ spec:
       containers:
       - name: shop-web
         image: guyaltd/shop-web
+        env:
+        - name: PORT
+          value: "3000"
+        - name: API_GATEWAY
+          value: "http://127.0.0.1:50000"
