@@ -3,3 +3,12 @@ global:
   imageRegistry: "localhost:5000"
 
 image: "localhost:5000/docker.elastic.co/kibana/kibana"
+
+# Allocate smaller chunks of memory per pod.
+resources:
+  requests:
+    cpu: "100m"
+    memory: "250M"
+  limits:
+    cpu: "1000m"
+    memory: "250M"

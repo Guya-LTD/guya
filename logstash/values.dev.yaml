@@ -29,3 +29,12 @@ logstashPipeline:
     input { tcp { port => 5400 codec => json } udp { port => 540 codec => json } }
     filter{ json { source => "message" } }
     output { elasticsearch { hosts => ["http://elasticsearch-master.guya-ltd-elk.svc.cluster.local:9200"] index => "guyalogs" } }
+
+# Allocate smaller chunks of memory per pod.
+resources:
+  requests:
+    cpu: "100m"
+    memory: "250M"
+  limits:
+    cpu: "1000m"
+    memory: "250M"

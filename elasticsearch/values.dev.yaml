@@ -16,10 +16,10 @@ replicas: 1
 resources:
   requests:
     cpu: "100m"
-    memory: "512M"
+    memory: "250M"
   limits:
     cpu: "1000m"
-    memory: "512M"
+    memory: "250M"
 
 # Request smaller persistent volumes.
 volumeClaimTemplate:
